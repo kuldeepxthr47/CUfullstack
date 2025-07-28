@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Feedback Form</title>
+</head>
+<body>
+    <h1>Session Feedback</h1>
+    
+    <form>
+        <!-- Name Input -->
+        <label for="name">Name of the person:</label><br>
+        <input type="text" id="name" name="name" placeholder="Enter your name"><br><br>
+
+        <!-- Age Input -->
+        <label for="age">Age:</label><br>
+        <input type="number" id="age" name="age" placeholder="Enter your age here"><br><br>
+
+        <!-- Rating Section -->
+        <label>Rate the session (1 to 5):</label><br>
+        <input type="radio" id="rate1" name="rating" value="1">
+        <label for="rate1">1</label><br>
+
+        <input type="radio" id="rate2" name="rating" value="2">
+        <label for="rate2">2</label><br>
+
+        <input type="radio" id="rate3" name="rating" value="3">
+        <label for="rate3">3</label><br>
+
+        <input type="radio" id="rate4" name="rating" value="4">
+        <label for="rate4">4</label><br>
+
+        <input type="radio" id="rate5" name="rating" value="5">
+        <label for="rate5">5</label><br><br>
+
+        <!-- Favorite Subject -->
+        <label>Choose your favourite subject:</label><br>
+        <input type="radio" id="css" name="subject" value="CSS">
+        <label for="css">CSS</label><br>
+
+        <input type="radio" id="html" name="subject" value="HTML">
+        <label for="html">HTML</label><br>
+
+        <input type="radio" id="python" name="subject" value="Python">
+        <label for="python">Python</label><br>
+
+        <input type="radio" id="cpp" name="subject" value="C++">
+        <label for="cpp">C++</label><br><br>
+
+        <!-- Department Dropdown -->
+        <label for="department">Select your department:</label><br>
+        <select id="department" name="department">
+            <option value="">--Select Department--</option>
+            <option value="Software Engineering">Software Engineering</option>
+            <option value="Information Technology">Information Technology</option>
+            <option value="Cyber Security">Cyber Security</option>
+            <option value="Data Science">Data Science</option>
+            <option value="AI and ML">AI and ML</option>
+        </select><br><br>
+
+        <!-- Submit Button -->
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
