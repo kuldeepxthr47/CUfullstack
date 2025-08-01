@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Dashboard</title>
+  <style>
+    :root {
+      --bg: #f4f4f4;
+      --text: #222;
+      --card-bg: #fff;
+      --accent: #007bff;
+    }
+
+    body.dark {
+      --bg: #1e1e1e;
+      --text: #e0e0e0;
+      --card-bg: #2c2c2c;
+      --accent: #66b2ff;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .dashboard {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      grid-template-rows: 60px 1fr;
+      grid-template-areas:
+        "sidebar header"
+        "sidebar main";
+      height: 100vh;
+    }
+
+    .sidebar {
+      grid-area: sidebar;
+      background-color: var(--card-bg);
+      padding: 1rem;
+      border-right: 1px solid #ccc;
+    }
+
+    .sidebar h2 {
+      margin-top: 0;
+      font-size: 1.2rem;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .sidebar ul li {
+      margin: 10px 0;
+    }
+
+    .sidebar a {
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .header {
+      grid-area: header;
+      background-color: var(--card-bg);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 1rem;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .theme-toggle {
+      cursor: pointer;
+      background-color: var(--accent);
+      color: white;
+      border: none;
+      padding: 0.4rem 0.8rem;
+      border-radius: 4px;
+      transition: background 0.3s;
+    }
+
+    .main {
+      grid-area: main;
+      padding: 1.5rem;
+      overflow-y: auto;
+    }
+
+    .card {
+      background-color: var(--card-bg);
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border-radius: 6px;
+      box-shadow: 0 1px 5px rgba(0,0,0,0.05);
+    }
+
+    .card h3 {
+      margin-top: 0;
+    }
+
+    /* Responsive Layout */
+    @media (max-width: 768px) {
+      .dashboard {
+        grid-template-columns: 1fr;
+        grid-template-rows: 60px auto auto;
+        grid-template-areas:
+          "header"
+          "sidebar"
+          "main";
+      }
+
+      .sidebar {
+        border-right: none;
+        border-bottom: 1px solid #ccc;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="dashboard">
+    <div class="sidebar">
+      <h2>Dashboard</h2>
+      <ul>
+        <li><a href="#">Overview</a></li>
+        <li><a href="#">Users</a></li>
+        <li><a href="#">Settings</a></li>
+      </ul>
+    </div>
+
+    <div class="header">
+      <h1>Admin Panel</h1>
+      <button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
+    </div>
+
+    <div class="main">
+      <div class="card">
+        <h3>Statistics</h3>
+        <p>Some basic admin stats or data overview.</p>
+      </div>
+      <div class="card">
+        <h3>User Activity</h3>
+        <p>Recent user logins and actions.</p>
+      </div>
+      <div class="card">
+        <h3>Settings</h3>
+        <p>System and user preferences overview.</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleTheme() {
+      document.body.classList.toggle('dark');
+    }
+  </script>
+</body>
+</html>
